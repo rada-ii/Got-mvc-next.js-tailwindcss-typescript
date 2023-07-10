@@ -1,0 +1,55 @@
+"use client";
+import { useEffect, useState } from "react";
+import { getCharacters } from "../controllers/characterController";
+
+const HomePage = () => {
+  const [characters, setCharacters] = useState([]);
+  const [randomCharacter, setRandomCharacter] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchedCharacters = await getCharacters();
+        setCharacters(fetchedCharacters);
+      } catch (error) {
+        console.error("Failed to fetch random  image:", error);
+        throw error;
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleFetchRandomCharacter = () => {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    const character = characters[randomIndex];
+    setRandomCharacter(character);
+  };
+
+  return (
+    <div className="flex flex-col gap-3 justify-end items-center ">
+      <button
+        onClick={handleFetchRandomCharacter}
+        className=" rounded-lg bg-teal-200 px-3 text-amber-700 mx-auto hover:bg-teal-800 hover:text-amber-200"
+      >
+        Random Character Details
+      </button>
+      {randomCharacter && (
+        <div>
+          <img
+            src={randomCharacter.imageUrl}
+            alt={randomCharacter.fullName}
+            className=" rounded-xl w-2/3  h-auto mx-auto"
+          />
+          <div className=" text-emerald-800  text-center">
+            <p>{randomCharacter.fullName}</p>
+            <p>{randomCharacter.title}</p>
+            <p>{randomCharacter.family}</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default HomePage;
