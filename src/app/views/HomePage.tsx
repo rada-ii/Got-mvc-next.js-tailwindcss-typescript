@@ -35,7 +35,7 @@ const HomePage = () => {
       {error && <p>Error: {error}</p>}
       <button
         onClick={handleFetchRandomCharacter}
-        className="rounded-lg bg-teal-200 px-3 text-amber-700 mx-auto hover:bg-teal-800 hover:text-amber-200"
+        className="rounded-lg bg-teal-300 px-3 text-amber-700 mx-auto hover:bg-teal-800 hover:text-amber-200"
       >
         Random Character Details
       </button>
