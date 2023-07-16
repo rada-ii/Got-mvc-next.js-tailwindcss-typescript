@@ -1,9 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+check out live: [got-mvc-t-n-t.vercel.app](https://got-mvc-t-n-t.vercel.app/)
+
+
+This is a simple  Game of Thrones (GOT) app that fetches GOT characters from an API endpoint written in the Model-View-Controller (MVC) architecture. 
+It's a personal practice project.
 
 ## Getting Started
 
-First, run the development server:
-
+First:
+npm i or npm install
+After that run the development server:
 ```bash
 npm run dev
 # or
