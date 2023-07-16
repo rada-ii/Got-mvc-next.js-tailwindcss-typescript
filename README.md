@@ -5,11 +5,10 @@ This is a simple  Game of Thrones (GOT) app that fetches GOT characters from an 
 It's a personal practice project.
 
 ## Getting Started
-
-First:
-npm i or npm install
-After that run the development server:
 ```bash
+#First:
+npm i or npm install
+#After that run the development server:
 npm run dev
 # or
 yarn dev
