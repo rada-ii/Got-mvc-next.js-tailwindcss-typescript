@@ -39,6 +39,7 @@ const HomePage = () => {
       >
         Random Character Details
       </button>
+      <p>(click me 😉 &uarr; )</p>
       {randomCharacter && (
         <div>
           <img
